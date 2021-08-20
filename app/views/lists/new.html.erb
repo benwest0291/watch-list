@@ -1,12 +1,9 @@
-<h1>Great Picks</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <%= link_to list_path(list) do %>
-      <li><%= list.name %> </li>
-    <% end %>
-  <% end %>
-</ul>
-<%= link_to "create a list", new_list_path, class: "btn btn-danger" %>
+<h1> create a new list </h1>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name, placeholder: "Type in name of list" %>
+  <%= f.submit class: "btn btn-warning" %>
+<% end %>
 
  <div class="footer">
   <div class="footer-links">
@@ -17,7 +14,7 @@
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
   <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+   This app is made with <i class="fas fa-heart"></i> by Ben West
   </div>
 </div>
 </div>
